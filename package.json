@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-postgre-stopwatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.git"
+  },
+  "author": "Kel-8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues"
+  },
+  "homepage": "https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
