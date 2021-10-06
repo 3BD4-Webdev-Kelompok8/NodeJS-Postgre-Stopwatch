@@ -32,10 +32,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Stopwatch</h3>
 
   <p align="center">
-    project_description
+    Stopwatch yang digunakan untuk menghitung pengerjaan sebuah task. Dibuat menggunakan NodeJS dan PostgreSQL.
     <br />
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch"><strong>Explore the docs »</strong></a>
     <br />
