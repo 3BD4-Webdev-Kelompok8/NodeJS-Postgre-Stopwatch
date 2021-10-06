@@ -22,7 +22,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -215,15 +214,15 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.svg?style=for-the-badge
 [contributors-url]: https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.svg?style=for-the-badge
 [forks-url]: https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.svg?style=for-the-badge
 [stars-url]: https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.svg?style=for-the-badge
 [issues-url]: https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.svg?style=for-the-badge
 [license-url]: https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/blob/master/LICENSE.txt
 
 [product-screenshot]: images/screenshot.png
