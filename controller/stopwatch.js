@@ -1,4 +1,4 @@
-const Tutorial = require('../models/stopwatch')
+const Stopwatch = require('../models/stopwatch')
 
 // Create
 exports.createStopwatch = async (req, res) => {
@@ -16,14 +16,14 @@ exports.createStopwatch = async (req, res) => {
   };
 
   // Save stopwatch in the database
-  Tutorial.create(stopwatch)
+  Stopwatch.create(stopwatch)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial."
+          err.message || "Some error occurred while creating the Stopwatch."
       });
     });
 };
