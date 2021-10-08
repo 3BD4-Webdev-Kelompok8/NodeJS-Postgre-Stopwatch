@@ -15,7 +15,7 @@ exports.createStopwatch = async (req, res) => {
     nama: req.body.nama,
   };
 
-  // Save Tutorial in the database
+  // Save stopwatch in the database
   Tutorial.create(stopwatch)
     .then(data => {
       res.send(data);

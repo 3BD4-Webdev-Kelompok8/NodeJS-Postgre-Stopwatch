@@ -17,6 +17,10 @@ const History = db.define("history", {
         allowNull : false,
         defaultValue : 0
     }
-});
+}, { 
+    tableName : 'history',
+    schema: 'public',
+    freezeTableName: true
+   });
 
 module.exports = History;
