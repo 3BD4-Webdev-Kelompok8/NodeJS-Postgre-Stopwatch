@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screenshot][product-screenshot]](https://example.com)
 
 ###### Mini Project
 
@@ -125,7 +125,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://example.com](https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/blob/main/images/mainmenu.png)
 2. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
