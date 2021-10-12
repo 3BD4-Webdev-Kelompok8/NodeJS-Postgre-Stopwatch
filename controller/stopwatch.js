@@ -29,31 +29,63 @@ exports.createStopwatch = async (req, res) => {
 };
 
 // Read
-exports.getStopwatchTimestamp = async (req, res) =>{
+exports.getStopwatchTimestamp = async (req, res) => {
+
+  const id = req.params.id;
+
+  Stopwatch.findOne({
+    where: {
+      id_stopwatch: req.params.id
+    },
+    attributes: ['timestamp'],
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch with id=" + id
+      });
+    });
 
 };
-exports.getStopwatchStatus = async (req, res) =>{
+
+exports.getStopwatchStatus = async (req, res) => {
 
 };
-exports.getStopwatchID = async (req, res) =>{
+
+exports.getStopwatch = async (req, res) => {
+
+  const id = req.params.id;
+
+  Stopwatch.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch with id=" + id
+      });
+    });
 
 };
-exports.getStopwatchName = async (req, res) =>{
+
+exports.getStopwatchName = async (req, res) => {
 
 };
 
 // Update
-exports.updateStopwatchTimestamp = async (req, res) =>{
+exports.updateStopwatchTimestamp = async (req, res) => {
 
 };
-exports.updateStopwatchStatus = async (req, res) =>{
+exports.updateStopwatchStatus = async (req, res) => {
 
 };
-exports.updateStopwatchName = async (req, res) =>{
+exports.updateStopwatchName = async (req, res) => {
 
 };
 
 // Delete
-exports.deleteStopwatchByID = async (req, res) =>{
+exports.deleteStopwatchByID = async (req, res) => {
 
 };
