@@ -52,6 +52,23 @@ exports.getStopwatchTimestamp = async (req, res) => {
 
 exports.getStopwatchStatus = async (req, res) => {
 
+  const id = req.params.id;
+
+  Stopwatch.findOne({
+    where: {
+      id_stopwatch: req.params.id
+    },
+    attributes: ['status'],
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch with id=" + id
+      });
+    });
+
 };
 
 exports.getStopwatch = async (req, res) => {
@@ -71,6 +88,23 @@ exports.getStopwatch = async (req, res) => {
 };
 
 exports.getStopwatchName = async (req, res) => {
+
+  const id = req.params.id;
+
+  Stopwatch.findOne({
+    where: {
+      id_stopwatch: req.params.id
+    },
+    attributes: ['nama'],
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch with id=" + id
+      });
+    });
 
 };
 
