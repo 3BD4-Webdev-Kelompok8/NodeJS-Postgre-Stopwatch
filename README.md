@@ -35,7 +35,7 @@
 <h3 align="center">Stopwatch</h3>
 
   <p align="center">
-    Stopwatch yang digunakan untuk menghitung pengerjaan sebuah task. Dibuat menggunakan NodeJS dan PostgreSQL.
+    A Stopwatch that is used for calculating the time that students need to do their tasks. This is a mini project made mostly using Node JS and Postgre SQL
     <br />
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch"><strong>Explore the docs »</strong></a>
     <br />
@@ -83,7 +83,15 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+###### Mini Project
+
+This project is a mini project as an assignment for the Web Development course. In this project, we are making a stopwatch for calculating the time that students need to do their tasks. This stopwatch has some features, those are:
+
+1. Adding a new stopwatch for the new task.
+2. Deleting stopwatch.
+3. This stopwatch can run when the tab is closed.
+
+This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task :).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -91,7 +99,11 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Vue.js](https://vuejs.org/)
+* HTML
+* CSS
+* Javascript
+* Node.js
+* PostgreSQL
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -186,9 +198,19 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Project Link: [https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch)
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Group: Group 8 - D4 3B - WebDev 2021
+
+Members:
+
+* [Azzam Badruz Zaman - 1915240xx](https://github.com/Azzambz)
+* [Fachri Dhia Fauzan - 1915240xx](https://github.com/fachdf)
+* [Herlana - 1915240xx](https://github.com/Soherlana)
+* [Putri Syalwa Abdillah - 1915240xx](https://github.com/putrisylw)
+* [Sabar Muhamad Itikap - 191524058](https://github.com/sabarmitikap)
+* [Wafi Khoerun - 191524064](https://github.com/wafikhn)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
