@@ -7,6 +7,7 @@ require('dotenv').config();
 //Database Connection
 const db = require('./config/database');
 
+
 db.authenticate().then(() => {
     console.log('Database connected...');
 }).catch(err => {
@@ -23,7 +24,7 @@ app.use(cors("*"));
 
 //Use routes
 app.use('/stopwatch', stopwatchRoutes);
-app.use('/history', historyRoutes);
+// app.use('/history', historyRoutes);
 
 const PORT = process.env.PORT || 5001;
 db.sync().then(() => {
