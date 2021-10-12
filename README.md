@@ -35,7 +35,7 @@
 <h3 align="center">Stopwatch</h3>
 
   <p align="center">
-    A Stopwatch that is used for calculating the time that students need to do their tasks. This is a mini project made mostly using Node JS and Postgre SQL
+    K8 Task Timer is a Stopwatch that is used for calculating the time that students need to do their tasks. 
     <br />
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch"><strong>Explore the docs »</strong></a>
     <br />
@@ -88,15 +88,18 @@
 </div>
 <!-- [![Product Name Screenshot][product-screenshot]](https://example.com) -->
 
-###### Mini Project
+###### Mini Project Web Development Course
 
-This project is a mini project as an assignment for the Web Development course. In this project, we are making a stopwatch for calculating the time that students need to do their tasks. This stopwatch has some features, those are:
+This project is a mini project as an assignment for the Web Development course. In this project, we implement the use of Node JS and Postgre SQL for Backend and use Vue JS for Frontend. This Stopwatch has some features, those are:
 
-1. Adding a new stopwatch for the new task.
-2. Deleting stopwatch.
-3. This stopwatch can run when the tab is closed.
+1. Adding a new Stopwatch for the new task.
+2. Can change the name of the Stopwatch according to the task.
+3. Deleting Stopwatch.
+4. This Stopwatch can run when the tab is closed.
+5. Stop and Reset the Stopwatch.
+6. See the history of stopwatch for each task.
 
-This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task :).
+This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -107,8 +110,9 @@ This project is still running and needs some improvements and also the addition 
 * HTML
 * CSS
 * Javascript
-* Node.js
+* Node JS
 * PostgreSQL
+* Vue JS
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -117,32 +121,16 @@ This project is still running and needs some improvements and also the addition 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+This will give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/blob/main/images/mainmenu.png)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+2. Open index.html on your browser
+3. Run application and go finish your task!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -151,9 +139,12 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To use this application, there are some features, those are:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Use the Play button to start the Stopwatch.
+2. Use the Pause button to pause the Stopwatch.
+3. Use the Reset button to restart the Stopwatch from the beginning.
+4. Use the Stop button to stop the Stopwatch and display the total elapsed time.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -162,12 +153,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- [] Analysis
+- [] Collect and define requirement
+- [] Development HTML and CSS for stopwatch display
+- [] Add Javascript for stopwatch function (Vanilla JS)
+- [] Add local storage to keep Stopwatch running in the background
+- [] Use Postgre SQL for the database
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -224,7 +217,7 @@ Members:
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
+* [Readme Template](https://github.com/othneildrew/Best-README-Template)
 * []()
 * []()
 
