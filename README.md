@@ -81,9 +81,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<div align="center">
 <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/mainmenu.png" alt="Logo" width="80" height="80">
 </a>
+</div>
 <!-- [![Product Name Screenshot][product-screenshot]](https://example.com) -->
 
 ###### Mini Project
