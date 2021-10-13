@@ -116,22 +116,14 @@ exports.updateStopwatchTimestamp = async (req, res) => {
     { timestamp: req.body.timestamp },
     { where: { id_stopwatch: id } }
   )
-    .then(data => {
-      if (data == 1) {
-        res.send({
-          message: "Timestamp Stopwatch was updated successfully."
-        });
-      } else {
-        res.send({
-          message: `Cannot update Timestamp Stopwatch with id=${id}. Maybe Timestamp Stopwatch was not found or req.body is empty!`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error updating Timestamp Stopwatch with id=" + id
-      });
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: "Error retrieving Stopwatch with id=" + id
     });
+  });
 };
 exports.updateStopwatchStatus = async (req, res) => {
 
@@ -148,14 +140,15 @@ exports.deleteStopwatchByID = async (req, res) => {
 
   Stopwatch.destroy({
     where: {
-      id: req.params.id
+      id_stopwatch: id
     }
-  }).then(function(rowDeleted){ 
-  if(rowDeleted === 1){
-     console.log('Deleted successfully');
-   }
-}, function(err){
-    console.log(err); 
-})
+  }).then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: "Error retrieving Stopwatch with id=" + id
+    });
+  });
   
 };
