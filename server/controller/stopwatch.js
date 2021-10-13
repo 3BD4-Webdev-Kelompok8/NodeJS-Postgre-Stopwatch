@@ -87,6 +87,36 @@ exports.getStopwatch = async (req, res) => {
 
 };
 
+exports.getAllStopwatch = async (req, res) => {
+
+  Stopwatch.findAll()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch "
+      });
+    });
+
+};
+
+exports.getRunningStopwatchID = async (req, res) => {
+
+  const status = true
+
+  await Stopwatch.findOne({ where: { status: true }, attributes: ['id_stopwatch']})
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch with id=" + id
+      });
+    });
+
+};
+
 exports.getStopwatchName = async (req, res) => {
 
   const id = req.params.id;
@@ -169,17 +199,17 @@ exports.updateStopwatchStatus = async (req, res) => {
     .then(data => {
       if (data == 1) {
         res.send({
-          message: "Timestamp Stopwatch was updated successfully."
+          message: "Stopwatch Status was updated successfully."
         });
       } else {
         res.send({
-          message: `Cannot update Timestamp Stopwatch with id=${id}. Maybe Timestamp Stopwatch was not found or req.body is empty!`
+          message: `Cannot update Stopwatch Status with id=${id}. Maybe Timestamp Stopwatch was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Timestamp Stopwatch with id=" + id
+        message: "Error updating Stopwatch Status with id=" + id
       });
     });
 };
@@ -213,18 +243,29 @@ exports.updateStopwatchName = async (req, res) => {
 exports.deleteStopwatchByID = async (req, res) => {
 
   const id = req.params.id;
+  Stopwatch.findByPk(id)
+    .then(data => {
+      const history = {
+        nama : data.nama,
+        timestamp : data.timestamp
+      }
+      History.create(history)
+        .then(status => {
+          console.log(status)
+          Stopwatch.destroy({
+            where: {
+              id_stopwatch: req.params.id
+            }
+          }).then(function(rowDeleted){ 
+          if(rowDeleted === 1){
+             console.log('Deleted successfully and History Created.s');
+             res.send('Deleted successfully and History Created.');
+           }
+        }, function(err){
+            console.log(err); 
+        })
+        })
+    });
 
-  Stopwatch.destroy({
-    where: {
-      id_stopwatch: req.params.id
-    }
-  }).then(function(rowDeleted){ 
-  if(rowDeleted === 1){
-     console.log('Deleted successfully');
-     res.send('Deleted successfully');
-   }
-}, function(err){
-    console.log(err); 
-})
   
 };

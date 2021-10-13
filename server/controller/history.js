@@ -43,13 +43,26 @@ exports.getHistory = async (req, res) =>{
     });
 };
 
+exports.getAllHistory = async (req, res) =>{
+  const id = req.params.id;
+
+  History.findAll(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Stopwatch "
+      });
+    });
+};
 // Delete
 exports.deleteHistoryByID = async (req, res) =>{
   const id = req.params.id;
 
   History.destroy({
     where: {
-      id_stopwatch: req.params.id
+      id_history: req.params.id
     }
   }).then(function(rowDeleted){ 
   if(rowDeleted === 1){

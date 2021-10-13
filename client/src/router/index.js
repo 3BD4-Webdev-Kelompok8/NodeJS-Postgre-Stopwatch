@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 import Stopwatch from '../views/Stopwatch.vue'
+import Rekap from '../views/Rekap.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -12,17 +13,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/stopwatch',
     name: 'Stopwatch',
     component: Stopwatch
+  },
+  {
+    path: '/rekap',
+    name: 'Rekap',
+    component: Rekap
   }
 ]
 
