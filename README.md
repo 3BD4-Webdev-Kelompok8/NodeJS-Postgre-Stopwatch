@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="server/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Stopwatch</h3>
@@ -107,12 +107,10 @@ This project is still running and needs some improvements and also the addition 
 
 ### Built With
 
-* HTML
-* CSS
-* Javascript
 * Node JS
 * PostgreSQL
 * Vue JS
+* Vuetify
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -129,8 +127,24 @@ This will give instructions on setting up your project locally. To get a local c
    ```sh
    https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.git
    ```
-2. Open index.html on your browser
-3. Run application and go finish your task!
+2. Create .env file and put this
+   ```sh
+    DB_HOST= {your host }
+    DB_USER= {your db user }
+    DB_PASSWORD= {your db password }
+    DB_DATABASE= {your db database }
+    PORT= {your host port }
+    DATABASE_PORT= { your db port }
+   ```
+4. Open two terminals to the project folder, then:
+    ```sh
+    cd server
+    nodemon server
+   ```
+   ```sh
+   cd client
+   npm run serve
+   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -145,7 +159,7 @@ To use this application, there are some features, those are:
 2. Use the Pause button to pause the Stopwatch.
 3. Use the Reset button to restart the Stopwatch from the beginning.
 4. Use the Stop button to stop the Stopwatch and display the total elapsed time.
-
+5. Use the Create button to create new stopwatch (You can give it a name too).
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -203,7 +217,7 @@ Project Group: Group 8 - D4 3B - WebDev 2021
 Members:
 
 * [Azzam Badruz Zaman - 1915240xx](https://github.com/Azzambz)
-* [Fachri Dhia Fauzan - 1915240xx](https://github.com/fachdf)
+* [Fachri Dhia Fauzan - 191524041](https://github.com/fachdf)
 * [Herlana - 1915240xx](https://github.com/Soherlana)
 * [Putri Syalwa Abdillah - 1915240xx](https://github.com/putrisylw)
 * [Sabar Muhamad Itikap - 191524058](https://github.com/sabarmitikap)
