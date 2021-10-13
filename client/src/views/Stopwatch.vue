@@ -55,6 +55,8 @@
                   >Stop</v-btn>
       <v-btn class="pink white--text"  v-if="item.timestamp > 0"  depressed  @click="stop(index)"
                   >Stop</v-btn>
+      <v-btn class="red white--text"  depressed  @click="stop(index)"
+                  >Delete</v-btn>
       <v-spacer></v-spacer>
       </v-card-actions>
  </v-card>
@@ -136,13 +138,14 @@ export default {
             if(typeof stopwatches[0] !== "undefined"){
               for (let i = 0; i < stopwatches.length; i++) {
                 if(!this.comparer(this.stopwatch, stopwatches[i])){
-                  this.stopwatch.unshift(stopwatches[i])
+                  this.stopwatch.push(stopwatches[i])
                 }
                  
               }
               
             }
             if(firstTime){
+              console.log("welcome back")
               for (let i = 0; i < this.stopwatch.length; i++){
                 console.log("masuk sini kah?")
                 console.log(this.stopwatch[i].status)
@@ -155,6 +158,8 @@ export default {
                   break;
                 }
               }
+            }else{
+              console.log("Its not first time you've been there since 1 sec ago")
             }
           })
       },
