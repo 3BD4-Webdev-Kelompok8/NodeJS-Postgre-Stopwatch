@@ -1,5 +1,5 @@
 const Stopwatch = require('../models/stopwatch')
-
+const History = require('../models/history')
 // Create
 exports.createStopwatch = async (req, res) => {
   // Validate request
@@ -111,7 +111,7 @@ exports.getStopwatchName = async (req, res) => {
 // Update
 exports.updateStopwatchTimestamp = async (req, res) => {
   const id = req.params.id;
-
+  
   Stopwatch.update(
     { timestamp: req.body.timestamp },
     { where: { id_stopwatch: id } }
@@ -133,11 +133,79 @@ exports.updateStopwatchTimestamp = async (req, res) => {
       });
     });
 };
-exports.updateStopwatchStatus = async (req, res) => {
 
+exports.updateStopwatchLastTimestamp = async (req, res) => {
+  const id = req.params.id;
+
+  Stopwatch.update(
+    { last_timestamp: req.body.last_timestamp },
+    { where: { id_stopwatch: id } }
+  )
+    .then(data => {
+      if (data == 1) {
+        res.send({
+          message: "Timestamp Stopwatch was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Timestamp Stopwatch with id=${id}. Maybe Timestamp Stopwatch was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Timestamp Stopwatch with id=" + id
+      });
+    });
+};
+
+exports.updateStopwatchStatus = async (req, res) => {
+  const id = req.params.id;
+
+  Stopwatch.update(
+    { status: req.body.status },
+    { where: { id_stopwatch: id } }
+  )
+    .then(data => {
+      if (data == 1) {
+        res.send({
+          message: "Timestamp Stopwatch was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Timestamp Stopwatch with id=${id}. Maybe Timestamp Stopwatch was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Timestamp Stopwatch with id=" + id
+      });
+    });
 };
 exports.updateStopwatchName = async (req, res) => {
+  const id = req.params.id;
 
+  Stopwatch.update(
+    { nama: req.body.nama },
+    { where: { id_stopwatch: id } }
+  )
+    .then(data => {
+      if (data == 1) {
+        res.send({
+          message: "Stopwatch Name was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Stopwatch Name with id=${id}. Maybe Stopwatch Name was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Stopwatch Name with id=" + id
+      });
+    });
 };
 
 
