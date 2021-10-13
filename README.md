@@ -100,6 +100,9 @@ This project is a mini project as an assignment for the Web Development course. 
 * You can create a new Stopwatch for the new task and also you can give it a name of the Stopwatch according to the task.
 * You can start and pause the Stopwatch.
 * You can stop and delete the Stopwatch and the history will be included in the Rekap page.
+* You can view the Stopwatch history on Rekap page.
+* You can delete one or delete all the Stopwatch history.
+* If one task is running and you want to start another task or new task, then the running stopwatch will be paused and the other will be start.
 * And also this Stopwatch can run when the tab is closed.
 
 This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task.
