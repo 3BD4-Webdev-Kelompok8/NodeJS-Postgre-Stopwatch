@@ -82,7 +82,13 @@
 
 <div align="center">
 <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
-    <img src="images/mainmenu.png" alt="Logo" width="900" height="450">
+    <img src="server/images/mainmenu.png" alt="Logo" width="900" height="450">
+</a>
+<a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
+    <img src="server/images/stopwatch.png" alt="Logo" width="900" height="450">
+</a>
+<a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
+    <img src="server/images/rekap.png" alt="Logo" width="900" height="450">
 </a>
 </div>
 <!-- [![Product Name Screenshot][product-screenshot]](https://example.com) -->
