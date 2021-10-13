@@ -90,14 +90,12 @@
 
 ###### Mini Project Web Development Course
 
-This project is a mini project as an assignment for the Web Development course. In this project, we implement the use of Node JS and Postgre SQL for Backend and use Vue JS for Frontend. This Stopwatch has some features, those are:
+This project is a mini project as an assignment for the Web Development course. In this project, we implement the use of Node JS and Postgre SQL for Backend and use Vue JS and Vuetify for Frontend. This Stopwatch has some features, those are:
 
-1. Adding a new Stopwatch for the new task.
-2. Can change the name of the Stopwatch according to the task.
-3. Deleting Stopwatch.
-4. This Stopwatch can run when the tab is closed.
-5. Stop and Reset the Stopwatch.
-6. See the history of stopwatch for each task.
+1. You can create a new Stopwatch for the new task and also you can give it a name of the Stopwatch according to the task.
+2. You can start and pause the Stopwatch.
+3. You can stop and delete the Stopwatch and the history will be included in the Rekap page.
+4. And also this Stopwatch can run when the tab is closed.
 
 This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task.
 
@@ -107,6 +105,8 @@ This project is still running and needs some improvements and also the addition 
 
 ### Built With
 
+* HTML
+* CSS
 * Node JS
 * PostgreSQL
 * Vue JS
@@ -155,11 +155,13 @@ This will give instructions on setting up your project locally. To get a local c
 
 To use this application, there are some features, those are:
 
-1. Use the Play button to start the Stopwatch.
-2. Use the Pause button to pause the Stopwatch.
-3. Use the Reset button to restart the Stopwatch from the beginning.
-4. Use the Stop button to stop the Stopwatch and display the total elapsed time.
-5. Use the Create button to create new stopwatch (You can give it a name too).
+1. Use the Create button to create the Stopwatch and you can give it a name according to the task.
+2. Use the Start button to start the Stopwatch.
+3. Use the Pause button to pause the Stopwatch.
+4. Use the Delete button to delete the Stopwatch.
+5. Use the Stop button to stop the Stopwatch and display will show the total elapsed time.
+6. Rekap page will show your Stopwatch history.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -169,8 +171,8 @@ To use this application, there are some features, those are:
 
 - [] Analysis
 - [] Collect and define requirement
-- [] Development HTML and CSS for stopwatch display
-- [] Add Javascript for stopwatch function (Vanilla JS)
+- [] Development HTML and CSS for the Stopwatch display
+- [] Add Javascript for Stopwatch function
 - [] Add local storage to keep Stopwatch running in the background
 - [] Use Postgre SQL for the database
 
@@ -189,9 +191,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b /3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch`)
+3. Commit your Changes (`git commit -m 'Add some NodeJS-Postgre-Stopwatch'`)
+4. Push to the Branch (`git push origin /3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -216,10 +218,10 @@ Project Group: Group 8 - D4 3B - WebDev 2021
 
 Members:
 
-* [Azzam Badruz Zaman - 1915240xx](https://github.com/Azzambz)
+* [Azzam Badruz Zaman - 191524035](https://github.com/Azzambz)
 * [Fachri Dhia Fauzan - 191524041](https://github.com/fachdf)
-* [Herlana - 1915240xx](https://github.com/Soherlana)
-* [Putri Syalwa Abdillah - 1915240xx](https://github.com/putrisylw)
+* [Herlana - 191524045](https://github.com/Soherlana)
+* [Putri Syalwa Abdillah - 191524054](https://github.com/putrisylw)
 * [Sabar Muhamad Itikap - 191524058](https://github.com/sabarmitikap)
 * [Wafi Khoerun - 191524064](https://github.com/wafikhn)
 
