@@ -63,7 +63,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -169,12 +168,13 @@ To use this application, there are some features, those are:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Analysis
-- [] Collect and define requirement
-- [] Development HTML and CSS for the Stopwatch display
-- [] Add Javascript for Stopwatch function
-- [] Add local storage to keep Stopwatch running in the background
-- [] Use Postgre SQL for the database
+- Analysis
+- Collect and define requirement
+- Development HTML and CSS
+- Add Javascript for Stopwatch function
+- Add local storage to keep Stopwatch running in the background
+- Use Postgre SQL for the database and Node JS for Backend (Server)
+- Use Vue JS for Frontend (Client)
 
 See the [open issues](https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues) for a full list of proposed features (and known issues).
 
@@ -234,8 +234,6 @@ Members:
 ## Acknowledgments
 
 * [Readme Template](https://github.com/othneildrew/Best-README-Template)
-* []()
-* []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
