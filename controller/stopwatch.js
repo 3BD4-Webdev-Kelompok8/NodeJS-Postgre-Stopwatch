@@ -110,7 +110,28 @@ exports.getStopwatchName = async (req, res) => {
 
 // Update
 exports.updateStopwatchTimestamp = async (req, res) => {
+  const id = req.params.id;
 
+  Stopwatch.update(
+    { timestamp: req.body.timestamp },
+    { where: { id_stopwatch: id } }
+  )
+    .then(data => {
+      if (data == 1) {
+        res.send({
+          message: "Timestamp Stopwatch was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Timestamp Stopwatch with id=${id}. Maybe Timestamp Stopwatch was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Timestamp Stopwatch with id=" + id
+      });
+    });
 };
 exports.updateStopwatchStatus = async (req, res) => {
 
