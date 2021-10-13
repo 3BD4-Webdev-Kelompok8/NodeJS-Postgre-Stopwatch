@@ -148,11 +148,12 @@ exports.deleteStopwatchByID = async (req, res) => {
 
   Stopwatch.destroy({
     where: {
-      id: req.params.id
+      id_stopwatch: req.params.id
     }
   }).then(function(rowDeleted){ 
   if(rowDeleted === 1){
      console.log('Deleted successfully');
+     res.send('Deleted successfully');
    }
 }, function(err){
     console.log(err); 
