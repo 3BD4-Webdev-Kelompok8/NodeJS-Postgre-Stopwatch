@@ -36,10 +36,10 @@ const deleteHistoryByID = async (id) =>{
     }
 }
 
-const deleteAllHistory = async (id) =>{
+const deleteAllHistory = async () =>{
     try {
-        console.log(HISTORY_URL + `/deleteAllHistory/${id}`)
-        const getAllURL = HISTORY_URL + `/deleteAllHistory/${id}`
+        console.log(HISTORY_URL + `/deleteAllHistory/`)
+        const getAllURL = HISTORY_URL + `/deleteAllHistory/`
         const result = await axios.delete(getAllURL);
         return result;
     } catch(err) {

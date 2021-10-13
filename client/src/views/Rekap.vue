@@ -5,7 +5,7 @@
         <v-card-text>{{jumlah_history}} Task Selesai</v-card-text>
         <v-card-actions>
             <v-spacer></v-spacer> 
-            <v-btn class="red white--text"   
+            <v-btn class="red white--text"    @click="deleteAllHistory()"
                     depressed>
                     Hapus Semua</v-btn>
             <v-spacer></v-spacer>
@@ -49,6 +49,15 @@ export default {
         }
     },
     methods : {
+        deleteAllHistory(){
+            History.deleteAllHistory()
+            .then((response)=>{
+                console.log("response")  
+                console.log(response)
+                
+            })
+            this.getAllHistory()
+        },
       comparer(history, respon){
           for (let i = 0; i < history.length; i++) {
                    if(history[i].id_history == respon.id_history){
@@ -63,7 +72,7 @@ export default {
         console.log("test")
           History.getAllHistory()
           .then((response)=>{
-            
+            console.log("getAllHistory")
             if(typeof response !== "undefined"){
               var histories = response.data
               for (let i = 0; i < histories.length; i++) {
