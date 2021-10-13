@@ -27,7 +27,7 @@ const updateStopwatchTimestamp = async (id, timestamp) => {
 }
 
 const updateStopwatchLastTimestamp = async (id, last_timestamp) => {
-    return await stopwatchNetworkSource.updateStopwatchTimestamp(id, last_timestamp)
+    return await stopwatchNetworkSource.updateStopwatchLastTimestamp(id, last_timestamp)
 }
 
 const deleteStopwatchByID = async (id) => {

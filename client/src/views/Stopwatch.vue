@@ -76,7 +76,8 @@ export default {
             newstopwatch : null,
             data : {},
             interval : null,
-            runningID : null
+            runningID : null,
+            newTimeStamp : 0
         }
     },
     methods : {
@@ -146,6 +147,10 @@ export default {
                 console.log("masuk sini kah?")
                 console.log(this.stopwatch[i].status)
                 if(this.stopwatch[i].status == 1){
+                  console.log("this.stopwatch[i].last_timestamp")
+                  console.log(this.stopwatch[i].last_timestamp)
+                  console.log(this.stopwatch[i].timestamp + (this.newTimeStamp) - this.stopwatch[i].last_timestamp)
+                  this.stopwatch[i].timestamp = this.stopwatch[i].timestamp + (this.newTimeStamp) - this.stopwatch[i].last_timestamp
                   this.start(i)
                   break;
                 }
@@ -180,7 +185,13 @@ export default {
         this.interval = setInterval(() => {
         this.stopwatch[index].timestamp = this.stopwatch[index].timestamp + 1;
         Stopwatch.updateStopwatchTimestamp(
-                this.stopwatch[index].id_stopwatch, this.stopwatch[index].timestamp) }, 1000);
+                this.stopwatch[index].id_stopwatch, this.stopwatch[index].timestamp)
+                .then(res=>{
+                  console.log(res)
+                  Stopwatch.updateStopwatchLastTimestamp(
+                this.stopwatch[index].id_stopwatch, Math.round(new Date().getTime()/1000));
+                })
+        }, 1000);
       },
       pause(index){
         console.log(this.stopwatch[index])
@@ -200,7 +211,7 @@ export default {
         clearInterval(this.interval);
         console.log(this.stopwatch[index].timestamp)
         this.saveAllStopwatch(true, index)
-        
+        this.$router.go()
 
         /*Stopwatch.updateStopwatchTimestamp(
           this.stopwatch[index].id_stopwatch, this.stopwatch[index].timestamp)
@@ -247,6 +258,9 @@ export default {
         }
         if(isdeleted){
           Stopwatch.deleteStopwatchByID(this.stopwatch[index].id_stopwatch)
+          .then(res=>{
+            console.log(res)
+          })
         }
       },
     
@@ -262,8 +276,9 @@ export default {
     },
     beforeMount(){
       this.getAllStopwatch(true);
-      
-      
+      this.newTimeStamp = Math.round(new Date().getTime()/1000);
+      console.log("this.newTimeStamp")
+      console.log(this.newTimeStamp)
     },
     mounted(){
       
