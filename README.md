@@ -40,7 +40,7 @@
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">View Demo</a>
+    <a href="#about-the-project">View Demo</a>
     ·
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues">Report Bug</a>
     ·
@@ -97,10 +97,10 @@
 
 This project is a mini project as an assignment for the Web Development course. In this project, we implement the use of Node JS and Postgre SQL for Backend and use Vue JS and Vuetify for Frontend. This Stopwatch has some features, those are:
 
-1. You can create a new Stopwatch for the new task and also you can give it a name of the Stopwatch according to the task.
-2. You can start and pause the Stopwatch.
-3. You can stop and delete the Stopwatch and the history will be included in the Rekap page.
-4. And also this Stopwatch can run when the tab is closed.
+* You can create a new Stopwatch for the new task and also you can give it a name of the Stopwatch according to the task.
+* You can start and pause the Stopwatch.
+* You can stop and delete the Stopwatch and the history will be included in the Rekap page.
+* And also this Stopwatch can run when the tab is closed.
 
 This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task.
 
@@ -174,13 +174,13 @@ To use this application, there are some features, those are:
 <!-- ROADMAP -->
 ## Roadmap
 
-- Analysis
-- Collect and define requirement
-- Development HTML and CSS
-- Add Javascript for Stopwatch function
-- Add local storage to keep Stopwatch running in the background
-- Use Postgre SQL for the database and Node JS for Backend (Server)
-- Use Vue JS for Frontend (Client)
+1. Analysis
+2. Collect and define requirement
+3. Development HTML and CSS
+4. Add Javascript for Stopwatch function
+5. Add local storage to keep Stopwatch running in the background
+6. Use Postgre SQL for the database and Node JS for Backend (Server)
+7. Use Vue JS for Frontend (Client)
 
 See the [open issues](https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues) for a full list of proposed features (and known issues).
 
