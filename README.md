@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="server/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Stopwatch</h3>
@@ -40,7 +40,7 @@
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">View Demo</a>
+    <a href="#about-the-project">View Demo</a>
     ·
     <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues">Report Bug</a>
     ·
@@ -63,7 +63,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -83,21 +82,28 @@
 
 <div align="center">
 <a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
-    <img src="images/mainmenu.png" alt="Logo" width="900" height="450">
+    <img src="server/images/mainmenu.png" alt="Logo" width="900" height="450">
+</a>
+<a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
+    <img src="server/images/stopwatch.png" alt="Logo" width="900" height="450">
+</a>
+<a href="https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch">
+    <img src="server/images/rekap.png" alt="Logo" width="900" height="450">
 </a>
 </div>
 <!-- [![Product Name Screenshot][product-screenshot]](https://example.com) -->
 
 ###### Mini Project Web Development Course
 
-This project is a mini project as an assignment for the Web Development course. In this project, we implement the use of Node JS and Postgre SQL for Backend and use Vue JS for Frontend. This Stopwatch has some features, those are:
+This project is a mini project as an assignment for the Web Development course. In this project, we implement the use of Node JS and Postgre SQL for Backend and use Vue JS and Vuetify for Frontend. This Stopwatch has some features, those are:
 
-1. Adding a new Stopwatch for the new task.
-2. Can change the name of the Stopwatch according to the task.
-3. Deleting Stopwatch.
-4. This Stopwatch can run when the tab is closed.
-5. Stop and Reset the Stopwatch.
-6. See the history of stopwatch for each task.
+* You can create a new Stopwatch for the new task and also you can give it a name of the Stopwatch according to the task.
+* You can start and pause the Stopwatch.
+* You can stop and delete the Stopwatch and the history will be included in the Rekap page.
+* You can view the Stopwatch history on the Rekap page.
+* You can delete one or delete all the Stopwatch history.
+* If one task is running and you want to start another task or new task, then the running stopwatch will be paused and the other will be start.
+* And also this Stopwatch can run when the tab is closed.
 
 This project is still running and needs some improvements and also the addition of some features. I hope this project can help your task.
 
@@ -109,10 +115,10 @@ This project is still running and needs some improvements and also the addition 
 
 * HTML
 * CSS
-* Javascript
 * Node JS
 * PostgreSQL
 * Vue JS
+* Vuetify
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -129,8 +135,24 @@ This will give instructions on setting up your project locally. To get a local c
    ```sh
    https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch.git
    ```
-2. Open index.html on your browser
-3. Run application and go finish your task!
+2. Create .env file and put this
+   ```sh
+    DB_HOST= {your host }
+    DB_USER= {your db user }
+    DB_PASSWORD= {your db password }
+    DB_DATABASE= {your db database }
+    PORT= {your host port }
+    DATABASE_PORT= { your db port }
+   ```
+4. Open two terminals to the project folder, then:
+    ```sh
+    cd server
+    nodemon server
+   ```
+   ```sh
+   cd client
+   npm run serve
+   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -141,10 +163,12 @@ This will give instructions on setting up your project locally. To get a local c
 
 To use this application, there are some features, those are:
 
-1. Use the Play button to start the Stopwatch.
-2. Use the Pause button to pause the Stopwatch.
-3. Use the Reset button to restart the Stopwatch from the beginning.
-4. Use the Stop button to stop the Stopwatch and display the total elapsed time.
+1. Use the Create button to create the Stopwatch and you can give it a name according to the task.
+2. Use the Start button to start the Stopwatch.
+3. Use the Pause button to pause the Stopwatch.
+4. Use the Delete button to delete the Stopwatch.
+5. Use the Stop button to stop the Stopwatch and display will show the total elapsed time.
+6. Rekap page will show your Stopwatch history.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -153,12 +177,13 @@ To use this application, there are some features, those are:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Analysis
-- [] Collect and define requirement
-- [] Development HTML and CSS for stopwatch display
-- [] Add Javascript for stopwatch function (Vanilla JS)
-- [] Add local storage to keep Stopwatch running in the background
-- [] Use Postgre SQL for the database
+1. Analysis
+2. Collect and define requirement
+3. Development HTML and CSS
+4. Add Javascript for Stopwatch function
+5. Add local storage to keep Stopwatch running in the background
+6. Use Postgre SQL for the database and Node JS for Backend (Server)
+7. Use Vue JS for Frontend (Client)
 
 See the [open issues](https://github.com/3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch/issues) for a full list of proposed features (and known issues).
 
@@ -175,9 +200,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b /3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch`)
+3. Commit your Changes (`git commit -m 'Add some NodeJS-Postgre-Stopwatch'`)
+4. Push to the Branch (`git push origin /3BD4-Webdev-Kelompok8/NodeJS-Postgre-Stopwatch`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -202,10 +227,10 @@ Project Group: Group 8 - D4 3B - WebDev 2021
 
 Members:
 
-* [Azzam Badruz Zaman - 1915240xx](https://github.com/Azzambz)
-* [Fachri Dhia Fauzan - 1915240xx](https://github.com/fachdf)
-* [Herlana - 1915240xx](https://github.com/Soherlana)
-* [Putri Syalwa Abdillah - 1915240xx](https://github.com/putrisylw)
+* [Azzam Badruz Zaman - 191524035](https://github.com/Azzambz)
+* [Fachri Dhia Fauzan - 191524041](https://github.com/fachdf)
+* [Herlana - 191524045](https://github.com/Soherlana)
+* [Putri Syalwa Abdillah - 191524054](https://github.com/putrisylw)
 * [Sabar Muhamad Itikap - 191524058](https://github.com/sabarmitikap)
 * [Wafi Khoerun - 191524064](https://github.com/wafikhn)
 
@@ -218,8 +243,6 @@ Members:
 ## Acknowledgments
 
 * [Readme Template](https://github.com/othneildrew/Best-README-Template)
-* []()
-* []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
