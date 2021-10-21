@@ -3,7 +3,7 @@ const History = require('../models/history')
 // Create
 exports.createStopwatch = async (req, res) => {
   // Validate request
-  if (!req.body) {
+  if (!   req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
@@ -25,7 +25,7 @@ exports.createStopwatch = async (req, res) => {
         message:
           err.message || "Some error occurred while creating the Stopwatch."
       });
-    });
+    });   
 };
 
 // Read
@@ -213,6 +213,7 @@ exports.updateStopwatchStatus = async (req, res) => {
       });
     });
 };
+
 exports.updateStopwatchName = async (req, res) => {
   const id = req.params.id;
 

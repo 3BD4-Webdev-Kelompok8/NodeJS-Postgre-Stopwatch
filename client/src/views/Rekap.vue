@@ -49,6 +49,7 @@ export default {
         }
     },
     methods : {
+      // method utk menghapus semua history
         deleteAllHistory(){
             History.deleteAllHistory()
             .then((response)=>{
@@ -58,6 +59,7 @@ export default {
             })
             this.getAllHistory()
         },
+        // method utk mencompare, kalau history baru return true 
       comparer(history, respon){
           for (let i = 0; i < history.length; i++) {
                    if(history[i].id_history == respon.id_history){
@@ -67,6 +69,7 @@ export default {
           } 
           return false;
         },
+        // method utk meretrieve seluruh history dari db
       getAllHistory(){
         this.history = [];
         console.log("test")
@@ -87,6 +90,7 @@ export default {
             this.jumlah_history = this.history.length
           })
       },
+      // mengubah timestamp menjadi format stopwatch
       timestampToStopwatch(timestamp){
             var hours = Math.floor(timestamp / 3600);
             timestamp -= hours * 3600;
@@ -101,6 +105,7 @@ export default {
             return hours + ":" + mins + ":" + secs;
             //sw.temp = hours + " Jam " + mins + " Menit " + secs + " Detik";
       },
+      // mengubah timestamp menjadi format kata-kata
       timestampToText(timestamp){
           var hours = Math.floor(timestamp / 3600);
             timestamp -= hours * 3600;
@@ -111,6 +116,7 @@ export default {
             //return hours + ":" + mins + ":" + secs;
             return hours + " Jam " + mins + " Menit " + secs + " Detik";
       },
+      // menghapus history
       deleteOneHistory(id){
           History.deleteHistoryByID(id)
           .then((response)=>{
@@ -125,6 +131,7 @@ export default {
             
       }
     },
+    // melakukan fungsi sebelum load
     beforeMount(){
       this.getAllHistory()
       //this.stopwatch.timer = 0

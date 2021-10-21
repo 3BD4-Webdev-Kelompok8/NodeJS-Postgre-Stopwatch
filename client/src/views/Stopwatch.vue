@@ -83,10 +83,7 @@ export default {
         }
     },
     methods : {
-      checkvariable(stopwatch){
-        console.log("interval = " + this.interval)
-        console.log("timestamp = " +stopwatch.timestamp)
-      },
+      // Method utk delete 1 stopwatch
       deleteStopwatch(id){
         Stopwatch.deleteStopwatchByID(id)
           .then((response)=>{
@@ -94,6 +91,8 @@ export default {
             this.getAllStopwatch(false)  
             })
       },
+
+      // Mengubah timestamp ke format stopwatch
       timestampToStopwatch(timestamp){
             var hours = Math.floor(timestamp / 3600);
             timestamp -= hours * 3600;
@@ -106,11 +105,12 @@ export default {
             if (mins < 10) { mins = "0" + mins; }
             if (secs < 10) { secs = "0" + secs; }
             return hours + ":" + mins + ":" + secs;
-            //sw.temp = hours + " Jam " + mins + " Menit " + secs + " Detik";
       },
+
+      /* Method utk membuat stopwatch baru */
       createStopwatch(){
          this.data.nama = this.newstopwatch
-         console.log(this.data)
+        
           Stopwatch.createStopwatch(this.data)
             .then(response => {
               console.log(response.message)
@@ -120,174 +120,136 @@ export default {
               console.log(e)
             })
       },
+
+      // Method menambahkan stopwatch ke array agar tidak double
       comparer(stopwatch, respon){
           for (let i = 0; i < stopwatch.length; i++) {
                    if(stopwatch[i].id_stopwatch == respon.id_stopwatch){
                      return true
                    }
-                // }
           } 
           return false;
         },
+      // Method utk me-retrieve stopwatch kedalam array
       getAllStopwatch(firstTime){
+          
           Stopwatch.getAllStopwatch()
           .then((response)=>{
-            
             var stopwatches = response.data
-            console.log(stopwatches)
             if(typeof stopwatches[0] !== "undefined"){
               for (let i = 0; i < stopwatches.length; i++) {
                 if(!this.comparer(this.stopwatch, stopwatches[i])){
                   this.stopwatch.push(stopwatches[i])
                 }
-                 
               }
-              
             }
+
+            /* Method apabila first time tab dibuka */
             if(firstTime){
-              console.log("welcome back")
+              
+              this.newTimeStamp = Math.round(new Date().getTime()/1000);
               for (let i = 0; i < this.stopwatch.length; i++){
-                console.log("masuk sini kah?")
-                console.log(this.stopwatch[i].status)
                 if(this.stopwatch[i].status == 1){
-                  console.log("this.stopwatch[i].last_timestamp")
-                  console.log(this.stopwatch[i].last_timestamp)
-                  console.log(this.stopwatch[i].timestamp + (this.newTimeStamp) - this.stopwatch[i].last_timestamp)
-                  this.stopwatch[i].timestamp = this.stopwatch[i].timestamp + (this.newTimeStamp) - this.stopwatch[i].last_timestamp
+                  console.log("calculating new timestamp")
+                  console.log(this.stopwatch[i].timestamp + " + ")
+                  console.log((this.newTimeStamp - this.stopwatch[i].last_timestamp))
+                  this.stopwatch[i].timestamp = this.stopwatch[i].timestamp + (this.newTimeStamp - this.stopwatch[i].last_timestamp)
                   this.start(i)
                   break;
                 }
               }
-            }else{
-              console.log("Its not first time you've been there since 1 sec ago")
             }
           })
       },
-      tick() {
-        console.log("masuk")
-        for(let i = 0; i < this.stopwatch.length; i++){
-          if( this.stopwatch[i].id_stopwatch === this.runningID){
-            this.stopwatch[i].timestamp++
-          }
-        }
-        
-      },
+
+      // Method utk men-start stopwatch
       start(index) {
-        //check dulu ada yang lagi jalan ga
+        console.log("starting the stopwatch")
+        /* Check for another running Stopwatch */
         for (let i = 0; i < this.stopwatch.length; i++){
-          console.log("masuk sini kah?")
-          console.log(this.stopwatch[i].status)
           if(this.stopwatch[i].status == 1 && i !== index){
             this.pause(i)
             break;
           }
         }
         this.stopwatch[index].status = true
+        //this.stopwatch[index].paused = false
+
+        /* Update The Statuses */
+        //update Status = true (running),
         Stopwatch.updateStopwatchStatus(
-              this.stopwatch[index].id_stopwatch,
-              this.stopwatch[index].status
-            )
-        this.interval = setInterval(() => {
-        this.stopwatch[index].timestamp = this.stopwatch[index].timestamp + 1;
+          this.stopwatch[index].id_stopwatch,
+          this.stopwatch[index].status)
+        //Update the timestamp,
         Stopwatch.updateStopwatchTimestamp(
-                this.stopwatch[index].id_stopwatch, this.stopwatch[index].timestamp)
-                .then(res=>{
-                  console.log(res)
-                  Stopwatch.updateStopwatchLastTimestamp(
-                this.stopwatch[index].id_stopwatch, Math.round(new Date().getTime()/1000));
-                })
-        }, 1000);
+              this.stopwatch[index].id_stopwatch,
+              this.stopwatch[index].timestamp);
+        //and Last Timestamp
+        Stopwatch.updateStopwatchLastTimestamp(
+          this.stopwatch[index].id_stopwatch, 
+          Math.round(new Date().getTime()/1000)); 
+        //Paused Status = false
+        /*
+        if(this.stopwatch[index].paused == true){
+          Stopwatch.updateStopwatchPaused(
+            this.stopwatch[index].id_stopwatch, 
+            this.stopwatch[index].paused); 
+        } */
+
+        /* Create the Interval Per 1s */
+        this.interval = setInterval(() => {
+          this.stopwatch[index].timestamp = this.stopwatch[index].timestamp + 1;}, 1000);
       },
+
+      // Method utk mem-pause stopwatch
       pause(index){
-        console.log(this.stopwatch[index])
+        console.log("pausing the stopwatch")
         this.stopwatch[index].status = false
-        console.log(this.stopwatch[index].status)
         clearInterval(this.interval);
         
+        /* Update the Selected Stopwatch */
+        //Update the status
         Stopwatch.updateStopwatchStatus(
               this.stopwatch[index].id_stopwatch,
-              this.stopwatch[index].status
-            )
+              this.stopwatch[index].status);
+        //Update the timestamp
+        Stopwatch.updateStopwatchTimestamp(
+              this.stopwatch[index].id_stopwatch,
+              this.stopwatch[index].timestamp);
+        //Update the last_timestamp
+        Stopwatch.updateStopwatchLastTimestamp(
+              this.stopwatch[index].id_stopwatch,
+              Math.round(new Date().getTime()/1000));
       },
+
+      // Method utk stop stopwatch dan memasukannya ke rekap
       stop(index){
-        console.log(this.stopwatch[index])
         this.stopwatch[index].status = false
-        console.log(this.stopwatch[index].status)
         clearInterval(this.interval);
-        console.log(this.stopwatch[index].timestamp)
-        this.saveAllStopwatch(true, index)
-        this.$router.go()
 
-        /*Stopwatch.updateStopwatchTimestamp(
-          this.stopwatch[index].id_stopwatch, this.stopwatch[index].timestamp)
-          .then(res => {
-              console.log(res)
-              Stopwatch.deleteStopwatchByID(this.stopwatch[index].id_stopwatch)
-        
-        }); */
-        
-      },
-      checkRunningStopwatch(){
-        console.log("dicek1")
-        this.getAllStopwatch();
-        console.log(this.stopwatch[0])
-        console.log("dicek2")
-        /*for (let i = 0; i < this.stopwatch.length+1; i++){
-          console.log("masuk sini kah?")
-          console.log(this.stopwatch[i])
-          if(this.stopwatch[i].status === 1){
-            
-            
-            this.start(i)
-          }
-        }*/
-      },
-      saveAllStopwatch(isdeleted ,index = 0){
-        for (let i = 0; i < this.stopwatch.length; i++){
-          if(this.stopwatch[i].status === true){
-            Stopwatch.updateStopwatchStatus(
-              this.stopwatch[i].id_stopwatch,
-              this.stopwatch[i].status
-            )
-            Stopwatch.updateStopwatchTimestamp(
-                this.stopwatch[i].id_stopwatch, this.stopwatch[i].timestamp)
-            //
-            Stopwatch.updateStopwatchLastTimestamp(
-              this.stopwatch[i].id_stopwatch,
-              Math.round(new Date().getTime()/1000))
-
-          }else{
-            Stopwatch.updateStopwatchTimestamp(
-                this.stopwatch[i].id_stopwatch, this.stopwatch[i].timestamp)
-          }
-        }
-        if(isdeleted){
-          Stopwatch.deleteStopwatchByID(this.stopwatch[index].id_stopwatch)
+        /* Update the timestamp then delete the stopwatch */
+        Stopwatch.updateStopwatchTimestamp(
+          this.stopwatch[index].id_stopwatch,
+          this.stopwatch[index].timestamp)
           .then(res=>{
             console.log(res)
+            Stopwatch.deleteStopwatchByID(this.stopwatch[index].id_stopwatch)
+             .then(res2=>{
+               console.log(res2)
+               this.$router.go()
+             })
+
           })
-        }
+
+        
       },
-    
-      /*start_sw(id){
-        id = 1
-      },
-      pause_sw(id){
-        id = 2
-      },
-      stop_sw(id){
-        id = 3
-      }*/
+
     },
+    // Method yg dijalankan sebelum load 
     beforeMount(){
-      this.getAllStopwatch(true);
+      var firstTime = true
+      this.getAllStopwatch(firstTime);
       this.newTimeStamp = Math.round(new Date().getTime()/1000);
-      console.log("this.newTimeStamp")
-      console.log(this.newTimeStamp)
-    },
-    mounted(){
-      
-      this.checkRunningStopwatch();
     }
 }
 </script>
