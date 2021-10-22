@@ -69,17 +69,6 @@ const updateStopwatchStatus = async (myID, status) =>{
     }
 }
 
-const updateStopwatchPaused = async (myID, paused) =>{
-    try {
-        console.log(STOPWATCH_URL + `/updateStopwatchPaused/${myID}`)
-        const getAllURL = STOPWATCH_URL + `/updateStopwatchPaused/${myID}`
-        const result = await axios.put(getAllURL, {paused : paused});
-        return result;
-    } catch(err) {
-        console.log(err)
-    }
-}
-
 const updateStopwatchTimestamp = async (myID, timestamp) =>{
     try {
         console.log(STOPWATCH_URL + `/updateStopwatchTimestamp/${myID}`)
@@ -96,28 +85,6 @@ const updateStopwatchLastTimestamp = async (myID, last_timestamp) =>{
         console.log(STOPWATCH_URL + `/updateStopwatchLastTimestamp/${myID}`)
         const getAllURL = STOPWATCH_URL + `/updateStopwatchLastTimestamp/${myID}`
         const result = await axios.put(getAllURL, {last_timestamp : last_timestamp});
-        return result;
-    } catch(err) {
-        console.log(err)
-    }
-}
-
-const updateStopwatchPauseEnd = async (myID, pause_end) =>{
-    try {
-        console.log(STOPWATCH_URL + `/updateStopwatchPauseEnd/${myID}`)
-        const getAllURL = STOPWATCH_URL + `/updateStopwatchPauseEnd/${myID}`
-        const result = await axios.put(getAllURL, {pause_end : pause_end});
-        return result;
-    } catch(err) {
-        console.log(err)
-    }
-}
-
-const updateStopwatchPauseStart = async (myID, pause_start) =>{
-    try {
-        console.log(STOPWATCH_URL + `/updateStopwatchPauseStart/${myID}`)
-        const getAllURL = STOPWATCH_URL + `/updateStopwatchPauseStart/${myID}`
-        const result = await axios.put(getAllURL, {pause_start : pause_start});
         return result;
     } catch(err) {
         console.log(err)
@@ -145,9 +112,6 @@ export default {
     updateStopwatchStatus,
     updateStopwatchTimestamp,
     updateStopwatchLastTimestamp,
-    deleteStopwatchByID,
-    updateStopwatchPauseStart,
-    updateStopwatchPauseEnd,
-    updateStopwatchPaused
+    deleteStopwatchByID
 
 }

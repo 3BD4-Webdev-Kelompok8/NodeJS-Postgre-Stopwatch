@@ -34,7 +34,7 @@
          width="500px"
          class="my-3"
          v-for="(item, index) in this.stopwatch" :key="item.id_stopwatch"
-         style="margin-left:-200px; height: 200px;">
+         style="height: 200px;">
             <v-card-title class="justify-center">{{item.nama}}</v-card-title>
             <template>
               <h1 class="text-center sw_time display-3 font-weight-bold" 
@@ -62,6 +62,7 @@
  </v-card>
  
       </v-col>
+     
   </v-row>
 
   
