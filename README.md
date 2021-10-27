@@ -227,7 +227,7 @@ Project Group: Group 8 - D4 3B - WebDev 2021
 
 Members:
 
-* [Azzam Badruz Zaman - 191524035](https://github.com/Azzambz)
+* [Azzam Badruz Zaman - 191524037](https://github.com/Azzambz)
 * [Fachri Dhia Fauzan - 191524041](https://github.com/fachdf)
 * [Herlana - 191524045](https://github.com/Soherlana)
 * [Putri Syalwa Abdillah - 191524054](https://github.com/putrisylw)
